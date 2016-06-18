@@ -1,0 +1,30 @@
+{
+  "name": "css-btns",
+  "version": "1.0.0",
+  "description": "https://tokovenko.github.io/css-btns/",
+  "main": "server.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tokovenko@github.com/tokovenko/css-btns.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tokovenko/css-btns/issues"
+  },
+  "homepage": "https://github.com/tokovenko/css-btns#readme",
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "node-static": "^0.7.7"
+  }
+}
