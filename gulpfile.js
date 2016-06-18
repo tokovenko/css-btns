@@ -12,7 +12,8 @@ gulp.task('sass', function() {
         ])
         .pipe(gulpif(!isProdBuild, sourcemaps.init()))
         .pipe(concat(isProdBuild ? 'css-btns.min.css' : 'css-btns.css'))
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass(isProdBuild ? {outputStyle: 'compressed'} : {})
+                .on('error', sass.logError))
         .pipe(gulpif(!isProdBuild, sourcemaps.write('./')))
         .pipe(gulp.dest('dist/css'));
 });
