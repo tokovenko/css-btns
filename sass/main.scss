@@ -6,100 +6,23 @@
         margin: 10px 0;
         border-radius: 3px;
         font-family: 'Dosis', sans-serif;
+
         .css-btn {
-            margin-right: 3px;
+            margin-right: 15px;
         }
-    }
-}
 
+        .title {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-@mixin btn($color) {
-    @if (lightness( $color ) > 50) {
-        $text-color: darken($color, 47%);
-        color: $text-color;
-    }
-    @else {
-        $text-color: lighten($color, 47%);
-        color: $text-color;
-    }
-    background: $color;
-    border: 1px solid darken($color, 3%);
+        .item {
+            margin-bottom: 5px;
 
-    &:hover,
-    &:focus,
-    &:hover.a-fw::before,
-    &:focus.a-fw::before  {
-        background: lighten($color, 7%);
-    }
-    &:hover.a-fw,
-    &:focus.a-fw  {
-        background: $color;
-    }
-    &:hover.a-fw::before,
-    &:focus.a-fw::before  {
-        top:0;
-    }
-}
-
-@mixin border-radius($radius) {
-    border-radius: $radius;
-}
-
-.css-btn {
-    cursor: pointer;
-    display: inline-block;
-    padding: 10px;
-    position: relative;
-    overflow: hidden;
-
-    @include btn(#ffffff);
-
-    &:hover,
-    &:focus {
-    }
-
-    &:focus {
-        outline: none;
-    }
-
-    &:active {
-        box-shadow: inset 1px 1px 3px #444424;
-    }
-
-    &.css-btn-black {
-        @include btn(#464646);
-    }
-    &.css-btn-tan {
-        @include btn(#D2B48C);
-    }
-    &.css-btn-blue {
-        @include btn(#084C9E);
-    }
-    &.css-btn-azure {
-        @include btn(#007FFF);
-    }
-    &.css-btn-olive {
-        @include btn(#808000);
-    }
-    &.css-btn-golden {
-        @include btn(#FFD700);
-    }
-    &.css-btn-salmon {
-        @include btn(#FA8072);
-    }
-    &.css-btn-red {
-        @include btn(#DC143C);
-    }
-
-
-    &.css-br {
-        @include border-radius(3px);
-    }
-    &.css-br-lg {
-        @include border-radius(10px);
-    }
-    &.css-br-cc {
-        @include border-radius(50%);
-        padding: 8px 15px 10px 15px;
+            .title {
+                color: #868686;
+            }
+        }
     }
 }

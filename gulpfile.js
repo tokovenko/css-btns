@@ -6,19 +6,22 @@ const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 const browserSync = require('browser-sync').create();
 
-gulp.task('sass', function() {
-    return gulp.src([
-            'sass/main.scss'
-        ])
-        .pipe(gulpif(!isProdBuild, sourcemaps.init()))
-        .pipe(concat(isProdBuild ? 'css-btns.min.css' : 'css-btns.css'))
-        .pipe(sass(isProdBuild ? {outputStyle: 'compressed'} : {})
-                .on('error', sass.logError))
-        .pipe(gulpif(!isProdBuild, sourcemaps.write('./')))
-        .pipe(gulp.dest('dist/css'));
-});
+function buildSass(src, concatTo) {
+    return function() {
+        return gulp.src(src)
+            .pipe(gulpif(!isProdBuild, sourcemaps.init()))
+            .pipe(concat(concatTo))
+            .pipe(sass(isProdBuild ? {outputStyle: 'compressed'} : {})
+                    .on('error', sass.logError))
+            .pipe(gulpif(!isProdBuild, sourcemaps.write('./')))
+            .pipe(gulp.dest('dist/css'));
+    };
+}
 
-gulp.task('build', ['sass'], (isProdBuild ? null : function() {
+gulp.task('sass-btns', buildSass('sass/btns.scss', (isProdBuild ? 'css-btns.min.css' : 'css-btns.css')));
+gulp.task('sass-main', buildSass('sass/main.scss', (isProdBuild ? 'main.min.css' : 'main.css')));
+
+gulp.task('build', ['sass-btns', 'sass-main'], (isProdBuild ? null : function() {
 
     browserSync.init({
         proxy: "localhost:8080"
@@ -26,7 +29,7 @@ gulp.task('build', ['sass'], (isProdBuild ? null : function() {
 
     gulp.watch([
         `sass/**/*.scss`
-    ], ['sass']);
+    ], ['sass-btns', 'sass-main']);
 
     gulp.watch('dist/css/**/*.css', function() {
         gulp.src('dist/css/**/*.css')
