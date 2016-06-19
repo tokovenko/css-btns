@@ -24,6 +24,8 @@
     background: -moz-linear-gradient(top, white 0%, #e6e6e6 100%);
     background: -webkit-linear-gradient(top, white 0%, #e6e6e6 100%);
     background: linear-gradient(to bottom, white 0%, #e6e6e6 100%); }
+  .css-btn.cb-shadow {
+    box-shadow: 1px 1px 1px #000; }
   .css-btn:focus {
     outline: none; }
   .css-btn:active, .css-btn.cb-active {
