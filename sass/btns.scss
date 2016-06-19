@@ -13,17 +13,18 @@
     &:hover,
     &:focus,
     &.cb-active,
-    &:hover.a-fw::before,
-    &:focus.a-fw::before  {
+    &:hover.cb-a::before,
+    &:focus.cb-a::before  {
         background: lighten($color, 7%);
     }
-    &:hover.a-fw,
-    &:focus.a-fw  {
+    &:hover.cb-a,
+    &:focus.cb-a  {
         background: $color;
     }
-    &:hover.a-fw::before,
-    &:focus.a-fw::before  {
+    &:hover.cb-a::before,
+    &:focus.cb-a::before  {
         top:0;
+        left:0;
     }
 
     &.cb-g {
@@ -131,5 +132,24 @@
     }
     &.css-btn-lg.css-br-cc {
         padding: 13px 17px 11px 17px;
+    }
+
+    //Animation
+    &.cb-at::before,
+    &.cb-al::before {
+        content: ' ';
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        right: 0;
+        height: 200px;
+        width: 200px;
+        opacity: 0.4;
+    }
+    &.cb-at::before {
+        transition: top 1.4s;
+    }
+    &.cb-al::before {
+        transition: left 1.4s;
     }
 }
