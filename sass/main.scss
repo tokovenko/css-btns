@@ -6,8 +6,23 @@
         margin: 10px 0;
         border-radius: 3px;
         font-family: 'Dosis', sans-serif;
+
         .css-btn {
             margin-right: 3px;
+        }
+
+        .title {
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .item {
+            margin-bottom: 5px;
+
+            .title {
+                color: #868686;
+            }
         }
     }
 }
@@ -51,6 +66,8 @@
     padding: 10px;
     position: relative;
     overflow: hidden;
+    font-family: Arial;
+    font-size: 14px;
 
     @include btn(#ffffff);
 
@@ -91,7 +108,7 @@
         @include btn(#DC143C);
     }
 
-
+    // Border Radiuses
     &.css-br {
         @include border-radius(3px);
     }
@@ -100,6 +117,22 @@
     }
     &.css-br-cc {
         @include border-radius(50%);
-        padding: 8px 15px 10px 15px;
+        padding: 10px 14px 10px 14px;
+    }
+
+    //Sizes
+    &.css-btn-sm {
+        font-size: 11px;
+        padding: 8px;
+    }
+    &.css-btn-sm.css-br-cc {
+        padding: 8px 11px 8px 11px;
+    }
+    &.css-btn-lg {
+        font-size: 17px;
+        padding: 12px;
+    }
+    &.css-btn-lg.css-br-cc {
+        padding: 13px 17px 11px 17px;
     }
 }

@@ -8,6 +8,14 @@
     font-family: 'Dosis', sans-serif; }
     .examples .example .css-btn {
       margin-right: 3px; }
+    .examples .example .title {
+      margin-bottom: 5px;
+      font-size: 14px;
+      font-weight: bold; }
+    .examples .example .item {
+      margin-bottom: 5px; }
+      .examples .example .item .title {
+        color: #868686; }
 
 .css-btn {
   cursor: pointer;
@@ -15,6 +23,8 @@
   padding: 10px;
   position: relative;
   overflow: hidden;
+  font-family: Arial;
+  font-size: 14px;
   color: #878787;
   background: #ffffff;
   border: 1px solid #f7f7f7; }
@@ -114,6 +124,16 @@
     border-radius: 10px; }
   .css-btn.css-br-cc {
     border-radius: 50%;
-    padding: 8px 15px 10px 15px; }
+    padding: 10px 14px 10px 14px; }
+  .css-btn.css-btn-sm {
+    font-size: 11px;
+    padding: 8px; }
+  .css-btn.css-btn-sm.css-br-cc {
+    padding: 8px 11px 8px 11px; }
+  .css-btn.css-btn-lg {
+    font-size: 17px;
+    padding: 12px; }
+  .css-btn.css-btn-lg.css-br-cc {
+    padding: 13px 17px 11px 17px; }
 
 /*# sourceMappingURL=css-btns.css.map */
