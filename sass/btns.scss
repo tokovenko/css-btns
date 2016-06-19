@@ -8,10 +8,11 @@
         color: $text-color;
     }
     background: $color;
-    border: 1px solid darken($color, 3%);
+    border-color: transparent;
 
     &:hover,
     &:focus,
+    &.cb-active,
     &:hover.a-fw::before,
     &:focus.a-fw::before  {
         background: lighten($color, 7%);
@@ -24,10 +25,28 @@
     &:focus.a-fw::before  {
         top:0;
     }
+
+    &.cb-g {
+        @include gradient($color);
+    }
+
+    &:hover.cb-g,
+    &:focus.cb-g,
+    &.cb-active.cb-g {
+        @include gradient(lighten($color, 7%));
+    }
 }
 
 @mixin border-radius($radius) {
     border-radius: $radius;
+}
+
+@mixin gradient($color) {
+    $darken: darken($color, 10%);
+
+    background: -moz-linear-gradient(top, $color 0%, $darken 100%);
+    background: -webkit-linear-gradient(top, $color 0%, $darken 100%);
+    background: linear-gradient(to bottom, $color 0%, $darken 100%);
 }
 
 .css-btn {
@@ -38,8 +57,10 @@
     overflow: hidden;
     font-family: Arial;
     font-size: 14px;
-
     @include btn(#ffffff);
+    border: 1px solid #d4d4d4;
+    // text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+
 
     &:hover,
     &:focus {
@@ -49,10 +70,12 @@
         outline: none;
     }
 
-    &:active {
+    &:active,
+    &.cb-active {
         box-shadow: inset 1px 1px 3px #444424;
     }
 
+    //Colors
     &.css-btn-black {
         @include btn(#464646);
     }
