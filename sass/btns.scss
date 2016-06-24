@@ -84,26 +84,14 @@
     &.css-btn-black {
         @include btn(#464646);
     }
-    &.css-btn-tan {
-        @include btn(#D2B48C);
+    &.css-btn-green {
+        @include btn(#2DAF94);
     }
     &.css-btn-blue {
-        @include btn(#084C9E);
-    }
-    &.css-btn-azure {
         @include btn(#007FFF);
     }
-    &.css-btn-olive {
-        @include btn(#808000);
-    }
-    &.css-btn-golden {
-        @include btn(#FFD700);
-    }
-    &.css-btn-salmon {
-        @include btn(#FA8072);
-    }
     &.css-btn-red {
-        @include btn(#DC143C);
+        @include btn(#B01C33);
     }
 
     // Border Radiuses
