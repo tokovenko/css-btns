@@ -6,6 +6,13 @@
     margin: 10px 0;
     border-radius: 3px;
     font-family: 'Dosis', sans-serif; }
+    .examples .example .code xmp {
+      white-space: pre-line;
+      padding: 8px;
+      background: #e0e0e0;
+      display: inline-block;
+      border-radius: 4px;
+      box-shadow: inset 0px 1px 2px grey; }
     .examples .example .css-btn {
       margin-right: 15px; }
     .examples .example .title {
